@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TL Plant & Equipment Hire | Premium Equipment Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #175EA8;
+            --accent-orange: #F29F05;
+            --white: #FFFFFF;
+            --black: #0A0A0A;
+            --light-gray: #F5F5F5;
+            --mid-gray: #E0E0E0;
+            --dark-gray: #333333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(135deg, rgba(23, 94, 168, 0.9), rgba(10, 10, 10, 0.7)), url('img/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #d98d04;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(242, 159, 5, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Equipment Cards */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .equipment-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .equipment-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .equipment-card-content {
+            padding: 1.5rem;
+        }
+
+        .equipment-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .equipment-card p {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            color: var(--accent-orange);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-link:hover {
+            gap: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--light-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+
+        .feature-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* === NEW: Category Sidebar Layout === */
+        .category-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .category-sidebar {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 100px;
+        }
+
+        .category-sidebar h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .category-sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-sidebar li {
+            padding: 0.8rem 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-gray);
+            border-bottom: 1px solid var(--mid-gray);
+            transition: all 0.3s;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .category-sidebar li:hover {
+            color: var(--accent-orange);
+            background: var(--light-gray);
+            padding-left: 1.5rem;
+        }
+
+        .category-sidebar li.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .category-products {
+            flex: 1;
+        }
+
+        /* === NEW: Product Card Enhancements === */
+        .card-quote-btn {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.7rem 1rem;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .card-quote-btn:hover {
+            background: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+
+        .card-specs {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            border-top: 1px solid var(--mid-gray);
+            padding-top: 1rem;
+        }
+
+        .card-specs li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-specs li::before {
+            content: "✓";
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2rem 1rem 1rem;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--mid-gray);
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--dark-gray);
+        }
+
+        /* Page Content */
+        .page-hero {
+            height: 40vh;
+            background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        /* Vehicle Cards */
+        .vehicle-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+        }
+
+        .vehicle-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .vehicle-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .vehicle-info {
+            padding: 2rem;
+        }
+
+        .vehicle-info h3 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .vehicle-specs {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .vehicle-specs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--mid-gray);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .vehicle-specs li:last-child {
+            border-bottom: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        /* Main responsive breakpoints: mobile, tablet, desktop */
+        @media (max-width: 480px) {
+            :root {
+                --container-padding: 1rem;
+            }
+
+            .container { padding: 0 1rem; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero p { font-size: 0.95rem; }
+            .equipment-grid, .features-grid { grid-template-columns: 1fr; }
+            .vehicle-showcase { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .contact-container { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; gap: 1rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+
+        @media (min-width: 481px) and (max-width: 1024px) {
+            :root {
+                --container-padding: 2rem;
+            }
+
+            .container { padding: 0 2rem; }
+            .equipment-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .vehicle-showcase { grid-template-columns: repeat(1, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-content { grid-template-columns: 1fr 1fr; }
+            .contact-container { grid-template-columns: 1fr; }
+        }
+
+        @media (min-width: 1025px) {
+            :root {
+                --container-padding: 4rem;
+            }
+
+            .container { padding: 0 4rem; }
+            .equipment-grid { grid-template-columns: repeat(3, 1fr); }
+            .features-grid { grid-template-columns: repeat(3, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+            .contact-container { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .vehicle-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .values-list {
+                grid-template-columns: 1fr;
+            }
+
+            /* === NEW: Mobile Category Sidebar === */
+            .category-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .category-sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        /* ===== Contact Form (improved) ===== */
+        .quote-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .quote-form .form-group { display: flex; flex-direction: column; }
+        .quote-form .form-group.full { grid-column: 1 / -1; }
+        .quote-form input,
+        .quote-form textarea,
+        .quote-form select {
+            padding: 0.8rem;
+            border: 1px solid var(--mid-gray);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .quote-submit { grid-column: 1 / -1; display: flex; gap: 1rem; align-items: center; }
+        .quote-submit .submit-btn { width: auto; padding: 0.9rem 1.25rem; }
+
+        /* ===== Gallery Lightbox ===== */
+        .lightbox-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 9999;
+            padding: 2rem;
+        }
+
+        .lightbox-overlay.active { display: flex; }
+
+        .lightbox-content { max-width: 1100px; width: 100%; max-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; }
+
+        .lightbox-content img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); opacity: 0; transform: translateY(8px); transition: opacity 300ms ease, transform 300ms ease; }
+        .lightbox-content img.show { opacity: 1; transform: translateY(0); }
+
+        .lightbox-controls { position: absolute; top: 50%; left: 0; right: 0; display: flex; justify-content: space-between; transform: translateY(-50%); pointer-events: none; }
+        .lightbox-controls button { pointer-events: auto; background: rgba(0,0,0,0.5); border: none; color: white; padding: 0.7rem 0.9rem; margin: 0 0.5rem; border-radius: 6px; cursor: pointer; }
+
+        .lightbox-close { position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.6); border: none; color: white; padding: 0.6rem 0.8rem; border-radius: 6px; cursor: pointer; }
+
+        /* ===== WhatsApp Floating Button ===== */
+        .whatsapp-float { position: fixed; right: 20px; bottom: 20px; background: #25D366; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.2); z-index: 10000; }
+        .whatsapp-float a { color: white; font-size: 22px; display: block; width: 100%; height: 100%; align-items: center; justify-content: center; display: flex; }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">TL <span>PLANT & EQUIPMENT</span></a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('construction')">Construction</a></li>
+                <li><a href="#" onclick="showPage('trucks')">Trucks</a></li>
+                <li><a href="#" onclick="showPage('farming')">Farming</a></li>
+                <li><a href="#" onclick="showPage('bowsers')">Bowsers</a></li>
+                <li><a href="#" onclick="showPage('vehicles')">Vehicles</a></li>
+                <li><a href="#" onclick="showPage('events')">Events</a></li>
+                <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+                <li><a href="#" onclick="showPage('contact')" class="cta-button">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Premium Equipment Hire Solutions</h1>
+                <p>From construction machinery to luxury vehicles – reliable, professional, and ready when you need them</p>
+                <div class="hero-buttons">
+                    <a href="#" onclick="showPage('contact')" class="btn-primary">Get a Quote</a>
+                    <a href="#" onclick="showPage('about')" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Equipment Fleet</h2>
+                    <p>Comprehensive hire solutions across multiple industries</p>
+                </div>
+                <div class="equipment-grid">
+                    <div class="equipment-card" onclick="showPage('construction')">
+                        <img src="img/Construction equipment.jpg" alt="Construction Equipment">
+                        <div class="equipment-card-content">
+                            <h3>Construction Equipment</h3>
+                            <p>TLBs, excavators, and heavy machinery for all your construction needs</p>
+                            <a href="#" class="card-link">Explore →</a>
+                        </div>
+                    </div>
+                    <div class="equipment-card" onclick="showPage('trucks')">
+                        <img src="img/Tipper Trucks.jpg" alt="Trucks">
+                        <div class="equipment-card-content">
+                            <h3>Trucks & Transport</h3>
+                            <p>Tipper and flat deck trucks from 10 to 50 ton capacity</p>
+                            <a href="#" class="card-link">Explore →</a>
+                        </div>
+                    </div>
+                    <div class="equipment-card" onclick="showPage('farming')">
+                        <img src="img/Farming Tractors.jpg" alt="Farming Equipment">
+                        <div class="equipment-card-content">
+                            <h3>Farming Machinery</h3>
+                            <p>Tractors and implements for agricultural operations</p>
+                            <a href="#" class="card-link">Explore →</a>
+                        </div>
+                    </div>
+                    <div class="equipment-card" onclick="showPage('bowsers')">
+                        <img src="img/Diesel Bowsers.webp" alt="Fuel Bowsers">
+                        <div class="equipment-card-content">
+                            <h3>Fuel Bowsers</h3>
+                            <p>Diesel and petrol bowsers for remote site operations</p>
+                            <a href="#" class="card-link">Explore →</a>
+                        </div>
+                    </div>
+                    <div class="equipment-card" onclick="showPage('vehicles')">
+                        <img src="img/BMW 650 Convertible.avif" alt="Luxury Vehicles">
+                        <div class="equipment-card-content">
+                            <h3>Luxury Vehicles</h3>
+                            <p>BMW Gusheshe and 650 Convertible for special occasions</p>
+                            <a href="#" class="card-link">Explore →</a>
+                        </div>
+                    </div>
+                    <div class="equipment-card" onclick="showPage('events')">
+                        <img src="img/VIP Toilets.jpg" alt="Event Equipment">
+                        <div class="equipment-card-content">
+                            <h3>Event Equipment</h3>
+                            <p>VIP toilets, tents, and event support infrastructure</p>
+                            <a href="#" class="card-link">Explore →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose TL Plant & Equipment Hire</h2>
+                    <p>Professional service backed by quality and reliability</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3>Reliable Equipment</h3>
+                        <p>All machinery maintained to the highest standards</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
+                        <h3>Quick Delivery</h3>
+                        <p>Fast turnaround and flexible pickup arrangements</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+                        <h3>Professional Service</h3>
+                        <p>Corporate-level professionalism with luxury experience</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-coins"></i></div>
+                        <h3>Transparent Pricing</h3>
+                        <p>Affordable rates with no hidden costs</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Safety First</h3>
+                        <p>All equipment meets strict safety regulations</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-map-location-dot"></i></div>
+                        <h3>Gauteng Wide</h3>
+                        <p>Serving Johannesburg, Pretoria, Midrand & beyond</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page-content">
+        <div class="page-hero" style="background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8)), url('img/about.jpg'); background-size: cover; background-position: center;">
+            <h1>About Us</h1>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="about-content">
+                    <img src="img/about banner.jpg" alt="TL Plant & Equipment" class="about-image">
+                    <div class="about-text">
+                        <h2>Excellence in Equipment Hire</h2>
+                        <p>TL Plant & Equipment Hire is a division of Pulse Management Consulting, specializing in reliable, premium, and versatile equipment hire across construction, agriculture, logistics, lifestyle transport, and event support services.</p>
+                        <p>We combine corporate-level professionalism with a luxury-inspired service experience, offering clients a comprehensive fleet backed by trustworthy operations.</p>
+                        <p>From heavy-duty machinery to luxury vehicles, we deliver quality, safety, and consistency to contractors, farmers, event planners, private clients, and corporate teams throughout Gauteng.</p>
+                        <h3 style="color: var(--primary-blue); margin-top: 2rem; margin-bottom: 1rem;">Our Core Values</h3>
+                        <div class="values-list">
+                            <div class="value-item">✓ Reliability</div>
+                            <div class="value-item">✓ Safety</div>
+                            <div class="value-item">✓ Quality</div>
+                            <div class="value-item">✓ Professionalism</div>
+                            <div class="value-item">✓ Client-Centered Service</div>
+                            <div class="value-item">✓ Transparency</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Mission & Vision</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+                    <div style="background: var(--white); padding: 2rem; border-radius: 10px; border-left: 5px solid var(--primary-blue);">
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Mission Statement</h3>
+                        <p>To provide a trusted, modern, and premium equipment hire experience that empowers construction teams, farmers, logistics operations, and private clients with tools that elevate productivity and deliver results.</p>
+                    </div>
+                    <div style="background: var(--white); padding: 2rem; border-radius: 10px; border-left: 5px solid var(--accent-orange);">
+                        <h3 style="color: var(--accent-orange); margin-bottom: 1rem;">Vision Statement</h3>
+                        <p>To become Gauteng's most dependable and versatile plant, equipment, and lifestyle-vehicle hire company — known for excellence, simplicity, and professional service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONSTRUCTION PAGE -->
+    <div id="construction" class="page-content">
+        <div class="page-hero" 
+     style="background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8)), 
+            url('img/construction bn.jpg'); 
+            background-size: cover; 
+            background-position: center;">
+    <h1>Construction Equipment</h1>
+</div>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Heavy-Duty Construction Machinery</h2>
+                    <p>Professional grade equipment for construction, infrastructure, and mining projects</p>
+                </div>
+                <!-- === NEW: Category Sidebar Layout === -->
+                <div class="category-layout">
+                    <div class="category-sidebar">
+                        <h3><i class="fas fa-layer-group"></i> Categories</h3>
+                        <ul>
+                            <li class="active" onclick="showPage('construction')"><i class="fas fa-trowel-bricks"></i> Construction Equipment</li>
+                            <li onclick="showPage('trucks')"><i class="fas fa-truck-moving"></i> Trucks & Transport</li>
+                            <li onclick="showPage('farming')"><i class="fas fa-tractor"></i> Farming Machinery</li>
+                            <li onclick="showPage('bowsers')"><i class="fas fa-gas-pump"></i> Fuel Bowsers</li>
+                            <li onclick="showPage('vehicles')"><i class="fas fa-car-side"></i> Luxury Vehicles</li>
+                            <li onclick="showPage('events')"><i class="fas fa-calendar-days"></i> Event Equipment</li>
+                        </ul>
+                    </div>
+                    <div class="category-products">
+                        <div class="equipment-grid">
+                            <div class="equipment-card">
+                                <img src="img/Yellow TLB.jpeg" alt="TLB">
+                                <div class="equipment-card-content">
+                                    <h3>Yellow TLB</h3>
+                                    <p>Versatile tractor-loader-backhoe for excavation, loading, and material handling. Perfect for site preparation and earthmoving operations.</p>
+                                    <!-- === NEW: Product Specs === -->
+                                    <ul class="card-specs">
+                                        <li>Operator Available</li>
+                                        <li>Daily / Weekly / Monthly Hire</li>
+                                        <li>Fully Maintained & Serviced</li>
+                                    </ul>
+                                    <!-- === NEW: Quote Button === -->
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Excavators.jpg" alt="Excavator">
+                                <div class="equipment-card-content">
+                                    <h3>Excavators</h3>
+                                    <p>Heavy-duty excavation equipment for deep digging, trenching, and large-scale earthmoving projects.</p>
+                                    <ul class="card-specs">
+                                        <li>Multiple Sizes Available</li>
+                                        <li>Experienced Operators</li>
+                                        <li>Flexible Hire Terms</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Material Handling.jpg" alt="Material Handling">
+                                <div class="equipment-card-content">
+                                    <h3>Material Handling</h3>
+                                    <p>Specialized equipment for moving, loading, and transporting construction materials across your site.</p>
+                                    <ul class="card-specs">
+                                        <li>Various Capacities</li>
+                                        <li>Safety Certified</li>
+                                        <li>Quick Deployment</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="background: var(--light-gray); padding: 2rem; border-radius: 10px; margin-top: 3rem;">
+                            <h3 style="color: var(--primary-blue); margin-bottom: 1rem;"><i class="fas fa-circle-check"></i> Features & Benefits</h3>
+                            <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                                <li style="padding: 0.5rem 0;"><i class="fas fa-wrench" style="color: var(--primary-blue);"></i> Fully maintained and serviced</li>
+                                <li style="padding: 0.5rem 0;"><i class="fas fa-user-check" style="color: var(--primary-blue);"></i> Experienced operator support available</li>
+                                <li style="padding: 0.5rem 0;"><i class="fas fa-calendar-alt" style="color: var(--primary-blue);"></i> Flexible hire periods</li>
+                                <li style="padding: 0.5rem 0;"><i class="fas fa-shipping-fast" style="color: var(--primary-blue);"></i> Quick delivery to site</li>
+                                <li style="padding: 0.5rem 0;"><i class="fas fa-certificate" style="color: var(--primary-blue);"></i> Safety certified equipment</li>
+                                <li style="padding: 0.5rem 0;"><i class="fas fa-shield-alt" style="color: var(--primary-blue);"></i> Comprehensive insurance options</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TRUCKS PAGE -->
+    <div id="trucks" class="page-content">
+        <div class="page-hero" style="background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600'); background-size: cover; background-position: center;">
+            <h1>Trucks & Transport</h1>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Logistics & Material Delivery Fleet</h2>
+                    <p>Reliable transport solutions from 10 to 50 ton capacity</p>
+                </div>
+                <!-- === NEW: Category Sidebar Layout === -->
+                <div class="category-layout">
+                    <div class="category-sidebar">
+                        <h3><i class="fas fa-layer-group"></i> Categories</h3>
+                        <ul>
+                            <li onclick="showPage('construction')"><i class="fas fa-trowel-bricks"></i> Construction Equipment</li>
+                            <li class="active" onclick="showPage('trucks')"><i class="fas fa-truck-moving"></i> Trucks & Transport</li>
+                            <li onclick="showPage('farming')"><i class="fas fa-tractor"></i> Farming Machinery</li>
+                            <li onclick="showPage('bowsers')"><i class="fas fa-gas-pump"></i> Fuel Bowsers</li>
+                            <li onclick="showPage('vehicles')"><i class="fas fa-car-side"></i> Luxury Vehicles</li>
+                            <li onclick="showPage('events')"><i class="fas fa-calendar-days"></i> Event Equipment</li>
+                        </ul>
+                    </div>
+                    <div class="category-products">
+                        <div class="equipment-grid">
+                            <div class="equipment-card">
+                                <img src="img/Tipper Trucks.jpg" alt="Tipper Truck">
+                                <div class="equipment-card-content">
+                                    <h3>Tipper Trucks</h3>
+                                    <p>Heavy-duty tipper trucks for sand, building materials, and bulk material transport. Perfect for construction and mining operations.</p>
+                                    <ul class="card-specs">
+                                        <li>Various Capacities Available</li>
+                                        <li>Experienced Drivers</li>
+                                        <li>Daily / Weekly / Monthly Hire</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Flat Deck Trucks.jpg" alt="Flat Deck Truck">
+                                <div class="equipment-card-content">
+                                    <h3>Flat Deck Trucks</h3>
+                                    <p>10 to 50 ton payload capacity for heavy equipment transport, machinery movement, and large material deliveries.</p>
+                                    <ul class="card-specs">
+                                        <li>10T • 20T • 30T • 50T Options</li>
+                                        <li>Equipment Transport Specialist</li>
+                                        <li>Flexible Scheduling</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Material Delivery Service.jpg" alt="Material Delivery">
+                                <div class="equipment-card-content">
+                                    <h3>Material Delivery Service</h3>
+                                    <p>Complete logistics support including sand loading, building material delivery, and on-site material movement.</p>
+                                    <ul class="card-specs">
+                                        <li>Full Service Available</li>
+                                        <li>Same-Day Delivery Options</li>
+                                        <li>Professional Logistics Team</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FARMING PAGE -->
+    <div id="farming" class="page-content">
+        <div class="page-hero" style="background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1600'); background-size: cover; background-position: center;">
+            <h1>Farming Machinery</h1>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Agricultural Equipment Solutions</h2>
+                    <p>Robust machinery for efficient farming operations</p>
+                </div>
+                <!-- === NEW: Category Sidebar Layout === -->
+                <div class="category-layout">
+                    <div class="category-sidebar">
+                        <h3><i class="fas fa-layer-group"></i> Categories</h3>
+                        <ul>
+                            <li onclick="showPage('construction')"><i class="fas fa-trowel-bricks"></i> Construction Equipment</li>
+                            <li onclick="showPage('trucks')"><i class="fas fa-truck-moving"></i> Trucks & Transport</li>
+                            <li class="active" onclick="showPage('farming')"><i class="fas fa-tractor"></i> Farming Machinery</li>
+                            <li onclick="showPage('bowsers')"><i class="fas fa-gas-pump"></i> Fuel Bowsers</li>
+                            <li onclick="showPage('vehicles')"><i class="fas fa-car-side"></i> Luxury Vehicles</li>
+                            <li onclick="showPage('events')"><i class="fas fa-calendar-days"></i> Event Equipment</li>
+                        </ul>
+                    </div>
+                    <div class="category-products">
+                        <div class="equipment-grid">
+                            <div class="equipment-card">
+                                <img src="img/Farming Tractors.jpg" alt="Farm Tractor">
+                                <div class="equipment-card-content">
+                                    <h3>Farming Tractors</h3>
+                                    <p>Reliable tractors suitable for plowing, planting, and general farm work. Various horsepower options available.</p>
+                                    <ul class="card-specs">
+                                        <li>Multiple HP Options</li>
+                                        <li>Well-Maintained Fleet</li>
+                                        <li>Seasonal Rates Available</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Implements.png" alt="Implements">
+                                <div class="equipment-card-content">
+                                    <h3>Implements (Megoma)</h3>
+                                    <p>Complete range of farming implements including plows, harrows, planters, and field preparation equipment.</p>
+                                    <ul class="card-specs">
+                                        <li>Full Range Available</li>
+                                        <li>Compatible with Various Tractors</li>
+                                        <li>Daily / Weekly / Monthly Hire</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Field Preparation.jpg" alt="Field Equipment">
+                                <div class="equipment-card-content">
+                                    <h3>Field Preparation</h3>
+                                    <p>Specialized equipment for land clearing, soil preparation, and field maintenance to maximize your agricultural productivity.</p>
+                                    <ul class="card-specs">
+                                        <li>Land Clearing Equipment</li>
+                                        <li>Soil Preparation Tools</li>
+                                        <li>Flexible Hire Terms</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BOWSERS PAGE -->
+    <div id="bowsers" class="page-content">
+        <div class="page-hero" 
+     style="background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8)), 
+            url('img/Fuel Bowsers.jpg'); 
+            background-size: cover; 
+            background-position: center;">
+    <h1>Construction Equipment</h1>
+    </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Remote Site Fuel Solutions</h2>
+                    <p>Diesel and petrol bowsers for operational support</p>
+                </div>
+                <!-- === NEW: Category Sidebar Layout === -->
+                <div class="category-layout">
+                    <div class="category-sidebar">
+                        <h3><i class="fas fa-layer-group"></i> Categories</h3>
+                        <ul>
+                            <li onclick="showPage('construction')"><i class="fas fa-trowel-bricks"></i> Construction Equipment</li>
+                            <li onclick="showPage('trucks')"><i class="fas fa-truck-moving"></i> Trucks & Transport</li>
+                            <li onclick="showPage('farming')"><i class="fas fa-tractor"></i> Farming Machinery</li>
+                            <li class="active" onclick="showPage('bowsers')"><i class="fas fa-gas-pump"></i> Fuel Bowsers</li>
+                            <li onclick="showPage('vehicles')"><i class="fas fa-car-side"></i> Luxury Vehicles</li>
+                            <li onclick="showPage('events')"><i class="fas fa-calendar-days"></i> Event Equipment</li>
+                        </ul>
+                    </div>
+                    <div class="category-products">
+                        <div class="equipment-grid">
+                            <div class="equipment-card">
+                                <img src="img/Diesel Bowsers.webp" alt="Diesel Bowser">
+                                <div class="equipment-card-content">
+                                    <h3>Diesel Bowsers</h3>
+                                    <p>Mobile diesel storage and dispensing units perfect for construction sites, mining operations, and remote locations.</p>
+                                    <ul class="card-specs">
+                                        <li>Various Capacities</li>
+                                        <li>Metered Dispensing System</li>
+                                        <li>Safety Compliant</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Petrol Bowsers.jpeg" alt="Petrol Bowser">
+                                <div class="equipment-card-content">
+                                    <h3>Petrol Bowsers</h3>
+                                    <p>Secure petrol bowsers with metering systems for accurate fuel management and on-site refueling operations.</p>
+                                    <ul class="card-specs">
+                                        <li>Metered Dispensing</li>
+                                        <li>Secure Locking Systems</li>
+                                        <li>Fire Safety Equipment Included</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="background: var(--primary-blue); color: var(--white); padding: 2rem; border-radius: 10px; margin-top: 3rem; text-align: center;">
+                            <h3 style="margin-bottom: 1rem; color: var(--white);"><i class="fas fa-shield-alt"></i> Safety & Compliance</h3>
+                            <p>All fuel bowsers are fully compliant with safety regulations and equipped with proper safety equipment including fire extinguishers, spill containment, and secure locking systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- VEHICLES PAGE -->
+    <div id="vehicles" class="page-content">
+        <div class="page-hero" style="background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1600'); background-size: cover; background-position: center;">
+            <h1>Luxury Vehicle Hire</h1>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Premium Lifestyle Fleet</h2>
+                    <p>Iconic vehicles for special occasions and media production</p>
+                </div>
+                <!-- === NEW: Category Sidebar Layout === -->
+                <div class="category-layout">
+                    <div class="category-sidebar">
+                        <h3><i class="fas fa-layer-group"></i> Categories</h3>
+                        <ul>
+                            <li onclick="showPage('construction')"><i class="fas fa-trowel-bricks"></i> Construction Equipment</li>
+                            <li onclick="showPage('trucks')"><i class="fas fa-truck-moving"></i> Trucks & Transport</li>
+                            <li onclick="showPage('farming')"><i class="fas fa-tractor"></i> Farming Machinery</li>
+                            <li onclick="showPage('bowsers')"><i class="fas fa-gas-pump"></i> Fuel Bowsers</li>
+                            <li class="active" onclick="showPage('vehicles')"><i class="fas fa-car-side"></i> Luxury Vehicles</li>
+                            <li onclick="showPage('events')"><i class="fas fa-calendar-days"></i> Event Equipment</li>
+                        </ul>
+                    </div>
+                    <div class="category-products">
+                        <div class="vehicle-showcase">
+                            <div class="vehicle-card">
+                                <img src="img/BMW 325 Gusheshe (1990s).jpg" alt="BMW 325 Gusheshe">
+                                <div class="vehicle-info">
+                                    <h3>BMW 325 Gusheshe (1990s)</h3>
+                                    <p>The legendary BMW E30 - an icon of South African automotive culture. Perfect for weddings, photoshoots, music videos, and special events.</p>
+                                    <ul class="vehicle-specs">
+                                        <li><span><i class="fas fa-calendar"></i> Era:</span><span>1990s Classic</span></li>
+                                        <li><span><i class="fas fa-star"></i> Style:</span><span>Iconic Performance</span></li>
+                                        <li><span><i class="fas fa-camera"></i> Best For:</span><span>Events, Media, Weddings</span></li>
+                                        <li><span><i class="fas fa-check-circle"></i> Condition:</span><span>Immaculate</span></li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="btn-primary" style="width: 100%; text-align: center; margin-top: 1rem;"><i class="fas fa-calendar-check"></i> Book This Vehicle</a>
+                                </div>
+                            </div>
+                            <div class="vehicle-card">
+                                <img src="img/BMW 650 Convertible.avif" alt="BMW 650 Convertible">
+                                <div class="vehicle-info">
+                                    <h3>BMW 650 Convertible</h3>
+                                    <p>Ultimate luxury and sophistication. This premium convertible delivers an unforgettable experience for corporate events, VIP transport, and exclusive occasions.</p>
+                                    <ul class="vehicle-specs">
+                                        <li><span><i class="fas fa-car"></i> Type:</span><span>Luxury Convertible</span></li>
+                                        <li><span><i class="fas fa-gem"></i> Style:</span><span>Premium Elegance</span></li>
+                                        <li><span><i class="fas fa-briefcase"></i> Best For:</span><span>Corporate, VIP Events</span></li>
+                                        <li><span><i class="fas fa-crown"></i> Features:</span><span>Full Luxury Package</span></li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="btn-primary" style="width: 100%; text-align: center; margin-top: 1rem;"><i class="fas fa-calendar-check"></i> Book This Vehicle</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- EVENTS PAGE -->
+    <div id="events" class="page-content">
+        <div class="page-hero" style="background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600'); background-size: cover; background-position: center;">
+            <h1>Event Equipment</h1>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Complete Event Support Solutions</h2>
+                    <p>Professional equipment for events of any size</p>
+                </div>
+                <!-- === NEW: Category Sidebar Layout === -->
+                <div class="category-layout">
+                    <div class="category-sidebar">
+                        <h3><i class="fas fa-layer-group"></i> Categories</h3>
+                        <ul>
+                            <li onclick="showPage('construction')"><i class="fas fa-trowel-bricks"></i> Construction Equipment</li>
+                            <li onclick="showPage('trucks')"><i class="fas fa-truck-moving"></i> Trucks & Transport</li>
+                            <li onclick="showPage('farming')"><i class="fas fa-tractor"></i> Farming Machinery</li>
+                            <li onclick="showPage('bowsers')"><i class="fas fa-gas-pump"></i> Fuel Bowsers</li>
+                            <li onclick="showPage('vehicles')"><i class="fas fa-car-side"></i> Luxury Vehicles</li>
+                            <li class="active" onclick="showPage('events')"><i class="fas fa-calendar-days"></i> Event Equipment</li>
+                        </ul>
+                    </div>
+                    <div class="category-products">
+                        <div class="equipment-grid">
+                            <div class="equipment-card">
+                                <img src="img/VIP Toilets.jpg" alt="VIP Toilets">
+                                <div class="equipment-card-content">
+                                    <h3>VIP Toilets</h3>
+                                    <p>Premium portable toilet facilities for corporate events, weddings, and outdoor functions. Clean, spacious, and well-maintained.</p>
+                                    <ul class="card-specs">
+                                        <li>Single Units or Multiple</li>
+                                        <li>Clean & Well-Maintained</li>
+                                        <li>Delivery & Setup Included</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Event Tents.jpg" alt="Event Tents">
+                                <div class="equipment-card-content">
+                                    <h3>Event Tents</h3>
+                                    <p>Various sizes of quality tents for outdoor events, providing shelter and elegant event spaces for any occasion.</p>
+                                    <ul class="card-specs">
+                                        <li>Multiple Sizes Available</li>
+                                        <li>Professional Setup</li>
+                                        <li>Weather-Resistant</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                            <div class="equipment-card">
+                                <img src="img/Mobile Storage & Site Equipment.avif" alt="Site Equipment">
+                                <div class="equipment-card-content">
+                                    <h3>Mobile Storage & Site Equipment</h3>
+                                    <p>Secure storage containers and additional site infrastructure to support your event operations and equipment needs.</p>
+                                    <ul class="card-specs">
+                                        <li>Flexible Configurations</li>
+                                        <li>Secure & Lockable</li>
+                                        <li>Quick Deployment</li>
+                                    </ul>
+                                    <a href="#" onclick="showPage('contact')" class="card-quote-btn"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GALLERY PAGE -->
+    <div id="gallery" class="page-content">
+        <div class="page-hero" style="background: linear-gradient(135deg, rgba(23, 94, 168, 0.95), rgba(10, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=1600'); background-size: cover; background-position: center;">
+            <h1>Gallery</h1>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Fleet in Action</h2>
+                    <p>See our equipment delivering results across Gauteng</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="img/Construction equipment.jpg" alt="Construction Site">
+                        <div class="gallery-overlay">
+                            <h3>Construction Projects</h3>
+                            <p>TLB operations on major sites</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Tipper Trucks.jpg" alt="Tipper Truck">
+                        <div class="gallery-overlay">
+                            <h3>Material Transport</h3>
+                            <p>Efficient logistics solutions</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Farming Tractors.jpg" alt="Farming Equipment">
+                        <div class="gallery-overlay">
+                            <h3>Agricultural Operations</h3>
+                            <p>Supporting farming productivity</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/BMW 325 Gusheshe (1990s).jpg" alt="BMW Gusheshe">
+                        <div class="gallery-overlay">
+                            <h3>Luxury Vehicles</h3>
+                            <p>Iconic BMW fleet for special events</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/VIP Toilets.jpg" alt="Event Setup">
+                        <div class="gallery-overlay">
+                            <h3>Event Support</h3>
+                            <p>Professional event infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Excavators.jpg" alt="Heavy Machinery">
+                        <div class="gallery-overlay">
+                            <h3>Heavy Equipment</h3>
+                            <p>Excavators and earthmoving</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page-content">
+        <section class="contact-section section">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Ready to hire equipment? Our team is here to help you find the perfect solution for your project.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h4>Service Areas</h4>
+                                    <p>Midrand, Johannesburg, Pretoria<br>Gauteng & Surrounding Areas</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+27 (0) 82 807 6867</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>Sales@thabangleruo.co.za</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <h4>Operating Hours</h4>
+                                    <p>Monday - Friday: 7:00 AM - 5:00 PM<br>Saturday: 8:00 AM - 1:00 PM<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem;">Request a Quote</h3>
+                        <form class="quote-form" onsubmit="return submitQuoteForm(event)">
+                            <input type="hidden" name="_subject" value="New Quote Request - TL Plant & Equipment Hire">
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" name="full_name" required placeholder="Your full name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" name="phone" required placeholder="+27 (0) 82 807 6867">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Equipment Needed *</label>
+                                <input type="text" name="equipment_needed" required placeholder="e.g. Yellow TLB, 10T Tipper">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Rental Duration *</label>
+                                <select name="rental_duration" required>
+                                    <option value="">Select duration</option>
+                                    <option value="hourly">Hourly</option>
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Rental Start Date</label>
+                                <input type="date" name="start_date">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Rental End Date</label>
+                                <input type="date" name="end_date">
+                            </div>
+
+                            <div class="form-group full">
+                                <label>Pickup / Delivery Location</label>
+                                <input type="text" name="location" placeholder="Pickup or delivery address">
+                            </div>
+
+                            <div class="form-group full">
+                                <label>Additional Notes / Requirements</label>
+                                <textarea name="notes" placeholder="Tell us about access, operators needed, special requirements..."></textarea>
+                            </div>
+
+                            <div class="quote-submit">
+                                <button type="submit" class="submit-btn">Send Enquiry</button>
+                                <button type="button" class="btn-secondary" onclick="document.querySelector('.quote-form').reset()">Reset</button>
+                                <div id="quote-status" style="margin-left:auto;color:var(--dark-gray);font-weight:600"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TL Plant & Equipment Hire</h3>
+                <p>A division of Pulse Management Consulting</p>
+                <p style="margin-top: 1rem;">Professional equipment hire solutions across construction, agriculture, logistics, and events.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                    <li><a href="#" onclick="showPage('construction')">Construction Equipment</a></li>
+                    <li><a href="#" onclick="showPage('trucks')">Trucks & Transport</a></li>
+                    <li><a href="#" onclick="showPage('farming')">Farming Machinery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showPage('bowsers')">Fuel Bowsers</a></li>
+                    <li><a href="#" onclick="showPage('vehicles')">Luxury Vehicles</a></li>
+                    <li><a href="#" onclick="showPage('events')">Event Equipment</a></li>
+                    <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 Serving Gauteng Wide</p>
+                <p>📞 +27 (0) 82 807 6867</p>
+                <p>✉️ Sales@thabangleruo.co.za</p>
+                <p style="margin-top: 1rem; font-weight: 600;">Business Hours:</p>
+                <p>Mon-Fri: 7:00 AM - 5:00 PM<br>Sat: 8:00 AM - 1:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TL Plant & Equipment Hire | A Division of Pulse Management Consulting. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Gallery Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+        <div class="lightbox-content">
+            <img id="lightbox-img" alt="Expanded gallery image">
+            <div class="lightbox-controls">
+                <button id="lightbox-prev" aria-label="Previous">← Prev</button>
+                <button id="lightbox-next" aria-label="Next">Next →</button>
+            </div>
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close">Close ✕</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" aria-hidden="false">
+        <a href="https://wa.me/27828076867" target="_blank" rel="noopener" title="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        /* Navigation and page switching */
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+            const target = document.getElementById(pageId);
+            if (target) target.classList.add('active');
+            window.scrollTo(0, 0);
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+
+        /* ===== Quote Form: submit by opening FormSubmit in a new tab (non-blocking) ===== */
+        let submittingQuote = false;
+        function submitQuoteForm(event) {
+            event.preventDefault();
+            if (submittingQuote) return false;
+            const form = event.target;
+            const status = document.getElementById('quote-status');
+            submittingQuote = true;
+            status.textContent = 'Sending…';
+
+            // Collect form data
+            const fd = new FormData(form);
+
+            // Build a temporary form and submit to FormSubmit in a new tab
+            const tmp = document.createElement('form');
+            tmp.method = 'POST';
+            tmp.action = 'https://formsubmit.co/Sales@thabangleruo.co.za';
+            tmp.target = '_blank';
+
+            // append all fields
+            for (const pair of fd.entries()) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = pair[0];
+                input.value = pair[1];
+                tmp.appendChild(input);
+            }
+
+            // Add subject and disable captcha (FormSubmit will respect these)
+            const subj = document.createElement('input'); subj.type = 'hidden'; subj.name = '_subject'; subj.value = 'New Quote Request - TL Plant & Equipment Hire'; tmp.appendChild(subj);
+            const disableCaptcha = document.createElement('input'); disableCaptcha.type = 'hidden'; disableCaptcha.name = '_captcha'; disableCaptcha.value = 'false'; tmp.appendChild(disableCaptcha);
+
+            document.body.appendChild(tmp);
+            tmp.submit();
+            tmp.remove();
+
+            status.textContent = 'Enquiry sent — opened in a new tab.';
+            setTimeout(() => { status.textContent = ''; }, 8000);
+            form.reset();
+            submittingQuote = false;
+            return false;
+        }
+
+        /* ===== Gallery Lightbox ===== */
+        (function() {
+            const galleryImgs = Array.from(document.querySelectorAll('.gallery-grid .gallery-item img'));
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            const btnNext = document.getElementById('lightbox-next');
+            const btnPrev = document.getElementById('lightbox-prev');
+            const btnClose = document.getElementById('lightbox-close');
+            let currentIndex = 0;
+
+            function showLightbox(index) {
+                currentIndex = (index + galleryImgs.length) % galleryImgs.length;
+                const src = galleryImgs[currentIndex].getAttribute('src');
+                lbImg.classList.remove('show');
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden','false');
+                lbImg.src = src;
+                // fade-in after image loads
+                lbImg.onload = () => { requestAnimationFrame(() => lbImg.classList.add('show')); };
+            }
+
+            function hideLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden','true');
+                lbImg.src = '';
+            }
+
+            galleryImgs.forEach((img, idx) => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => showLightbox(idx));
+            });
+
+            btnNext.addEventListener('click', (e) => { e.stopPropagation(); showLightbox(currentIndex + 1); });
+            btnPrev.addEventListener('click', (e) => { e.stopPropagation(); showLightbox(currentIndex - 1); });
+            btnClose.addEventListener('click', hideLightbox);
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) hideLightbox(); });
+
+            // keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') hideLightbox();
+                if (e.key === 'ArrowRight') showLightbox(currentIndex + 1);
+                if (e.key === 'ArrowLeft') showLightbox(currentIndex - 1);
+            });
+        })();
+
+        // Smooth scroll for navbar (existing behaviour)
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
