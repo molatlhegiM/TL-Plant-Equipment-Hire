@@ -746,55 +746,59 @@
             }
         }
 
-        /* Responsive */
-        /* Main responsive breakpoints: mobile, tablet, desktop */
-        @media (max-width: 480px) {
-            :root {
-                --container-padding: 1rem;
-            }
+        /* ===== RESPONSIVE MEDIA QUERIES ===== */
 
-            .container { padding: 0 1rem; }
-            .hero h1 { font-size: 1.6rem; }
-            .hero p { font-size: 0.95rem; }
-            .equipment-grid, .features-grid { grid-template-columns: 1fr; }
+        /* Desktop: 1200px and up */
+        @media (max-width: 1200px) {
+            .container { max-width: 1100px; padding: 0 2rem; }
+            .section { padding: 4rem 2rem; }
+            .section-header h2 { font-size: 2.2rem; }
+            .equipment-grid { gap: 1.5rem; }
+            .features-grid { gap: 1.5rem; }
+            .gallery-grid { gap: 1rem; }
+            .nav-container { padding: 1rem 1.5rem; }
+            .hero h1 { font-size: 3rem; }
+            .page-hero h1 { font-size: 2.5rem; }
+        }
+
+        /* Large Tablet: 992px and up */
+        @media (max-width: 992px) {
+            .container { max-width: 960px; padding: 0 1.5rem; }
+            .section { padding: 3.5rem 1.5rem; }
+            .section-header h2 { font-size: 2rem; }
+            .equipment-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .vehicle-showcase { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .contact-container { grid-template-columns: 1fr; }
-            .about-content { grid-template-columns: 1fr; gap: 1rem; }
-            .footer-content { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 2rem; }
+            .values-list { grid-template-columns: 1fr; }
+            .category-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+            .category-sidebar { position: relative; top: 0; margin-bottom: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .page-hero h1 { font-size: 2rem; }
+            .page-hero { height: 35vh; }
+            .hero { height: 70vh; }
+            .nav-links { gap: 1rem; }
+            .hero-buttons { flex-wrap: wrap; gap: 0.8rem; }
+            .btn-primary, .btn-secondary { padding: 0.9rem 1.8rem; font-size: 0.95rem; }
+            .about-image { height: 400px; }
+            .vehicle-card img { height: 300px; }
+            .gallery-item { height: 250px; }
+            .equipment-card img { height: 200px; }
         }
 
-        @media (min-width: 481px) and (max-width: 1024px) {
-            :root {
-                --container-padding: 2rem;
-            }
-
-            .container { padding: 0 2rem; }
-            .equipment-grid { grid-template-columns: repeat(2, 1fr); }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .vehicle-showcase { grid-template-columns: repeat(1, 1fr); }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .about-content { grid-template-columns: 1fr 1fr; }
-            .contact-container { grid-template-columns: 1fr; }
-        }
-
-        @media (min-width: 1025px) {
-            :root {
-                --container-padding: 4rem;
-            }
-
-            .container { padding: 0 4rem; }
-            .equipment-grid { grid-template-columns: repeat(3, 1fr); }
-            .features-grid { grid-template-columns: repeat(3, 1fr); }
-            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-            .contact-container { grid-template-columns: 1fr 1fr; }
-        }
-
+        /* Tablet: 768px and up */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
+            .container { max-width: 100%; padding: 0 1rem; }
+            .section { padding: 3rem 1rem; }
+            .section-header { margin-bottom: 2.5rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .section-header p { font-size: 1rem; }
+            
+            /* Navigation */
+            .menu-toggle { display: flex; }
             .nav-links {
                 display: none;
                 position: absolute;
@@ -803,44 +807,263 @@
                 right: 0;
                 background: var(--white);
                 flex-direction: column;
-                padding: 2rem;
+                padding: 1.5rem;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin-bottom: 0.5rem; }
+            .nav-container { padding: 0.8rem 1rem; }
+
+            /* Hero */
+            .hero { height: 60vh; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero-content { padding: 1rem; }
+            .hero-buttons { gap: 0.5rem; }
+            .btn-primary, .btn-secondary { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+
+            /* Page Heroes */
+            .page-hero { height: 30vh; }
+            .page-hero h1 { font-size: 1.6rem; }
+
+            /* Grids */
+            .equipment-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .features-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .vehicle-showcase { grid-template-columns: 1fr; gap: 1.5rem; }
+            .about-content { grid-template-columns: 1fr; gap: 1.5rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 2rem; }
+            .values-list { grid-template-columns: 1fr; }
+            
+            /* About Section */
+            .about-image { height: 350px; }
+            .about-text h2 { font-size: 1.8rem; }
+            .about-text p { font-size: 1rem; }
+
+            /* Cards */
+            .equipment-card img { height: 200px; }
+            .vehicle-card img { height: 250px; }
+            .gallery-item { height: 200px; }
+            .feature-item { padding: 1.5rem; }
+            .feature-icon { width: 60px; height: 60px; font-size: 1.5rem; }
+
+            /* Forms */
+            .quote-form { grid-template-columns: 1fr; }
+            .quote-form .form-group.full { grid-column: 1; }
+            .quote-submit { flex-direction: column; }
+            .quote-submit .submit-btn { width: 100%; }
+            .quote-submit button { width: 100%; }
+            .contact-form { padding: 1.5rem; }
+
+            /* Category Sidebar */
+            .category-layout { grid-template-columns: 1fr; gap: 1rem; }
+            .category-sidebar { position: relative; top: 0; margin-bottom: 1.5rem; }
+
+            /* Contact Section */
+            .contact-info h2 { font-size: 1.8rem; }
+            .contact-details { gap: 1rem; }
+            .contact-item { gap: 0.8rem; }
+            .contact-icon { width: 45px; height: 45px; }
+
+            /* Footer */
+            .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-section h3 { font-size: 1.1rem; }
+
+            /* Mission & Vision */
+            div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+
+            /* Lightbox responsive */
+            .lightbox-overlay { padding: 1rem; }
+            .lightbox-content { max-height: 80vh; }
+            .lightbox-content img { max-height: 80vh; }
+        }
+
+        /* Mobile: 576px and below */
+        @media (max-width: 576px) {
+            * { box-sizing: border-box; }
+            .container { max-width: 100%; padding: 0 0.8rem; }
+            .section { padding: 2rem 0.8rem; }
+            .section-header { margin-bottom: 2rem; }
+            .section-header h2 { font-size: 1.5rem; }
+            .section-header p { font-size: 0.95rem; }
+
+            /* Navigation */
+            .nav-container { padding: 0.6rem 0.8rem; flex-wrap: wrap; }
+            .logo { font-size: 1.2rem; }
+            .nav-links {
+                padding: 1rem;
+                top: calc(100% + 5px);
+            }
+            .nav-links li a { font-size: 0.95rem; }
+
+            /* Hero */
+            .hero { height: 50vh; padding: 1rem; }
+            .hero h1 { font-size: 1.4rem; letter-spacing: 1px; }
+            .hero p { font-size: 0.9rem; }
+            .hero-content { max-width: 100%; padding: 1rem 0; }
+            .hero-buttons { flex-direction: column; gap: 0.8rem; }
+            .btn-primary, .btn-secondary { 
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+                width: 100%;
             }
 
-            .nav-links.active {
-                display: flex;
-            }
+            /* Page Heroes */
+            .page-hero { height: 25vh; }
+            .page-hero h1 { font-size: 1.3rem; letter-spacing: 0.5px; }
 
-            .hero h1 {
-                font-size: 2rem;
-            }
+            /* Grids */
+            .equipment-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .features-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+            .vehicle-showcase { grid-template-columns: 1fr; gap: 1rem; }
+            .about-content { grid-template-columns: 1fr; gap: 1rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 1.5rem; }
+            .values-list { grid-template-columns: 1fr; gap: 0.8rem; }
 
-            .hero p {
-                font-size: 1rem;
-            }
+            /* Cards */
+            .equipment-card { border-radius: 8px; }
+            .equipment-card img { height: 180px; }
+            .equipment-card-content { padding: 1rem; }
+            .equipment-card h3 { font-size: 1.2rem; }
+            .equipment-card p { font-size: 0.9rem; }
+            .card-quote-btn { padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+            .card-specs { margin-top: 0.8rem; padding-top: 0.8rem; }
+            .card-specs li { font-size: 0.85rem; padding: 3px 0; }
 
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
+            /* Vehicle Cards */
+            .vehicle-card img { height: 220px; }
+            .vehicle-info { padding: 1rem; }
+            .vehicle-info h3 { font-size: 1.3rem; }
+            .vehicle-specs li { flex-direction: column; align-items: flex-start; gap: 0.3rem; font-size: 0.85rem; }
 
-            .vehicle-showcase {
-                grid-template-columns: 1fr;
-            }
+            /* Gallery */
+            .gallery-item { height: 180px; }
+            .gallery-item img { width: 100%; height: 100%; }
+            .gallery-overlay { padding: 1rem 0.8rem 0.8rem; }
+            .gallery-overlay h3 { font-size: 1rem; }
 
-            .values-list {
-                grid-template-columns: 1fr;
-            }
+            /* About Section */
+            .about-image { height: 280px; }
+            .about-text h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+            .about-text p { font-size: 0.95rem; line-height: 1.5; }
+            .values-list { grid-template-columns: 1fr; gap: 0.5rem; }
+            .value-item { font-size: 0.9rem; }
 
-            /* === NEW: Mobile Category Sidebar === */
-            .category-layout {
-                grid-template-columns: 1fr;
+            /* Forms */
+            .quote-form { grid-template-columns: 1fr; gap: 0.8rem; }
+            .quote-form .form-group { margin-bottom: 0.8rem; }
+            .quote-form label { font-size: 0.9rem; margin-bottom: 0.3rem; }
+            .quote-form input,
+            .quote-form textarea,
+            .quote-form select { 
+                padding: 0.7rem;
+                font-size: 0.9rem;
+                border-radius: 4px;
             }
+            .quote-submit { flex-direction: column; gap: 0.8rem; }
+            .quote-submit .submit-btn { 
+                width: 100%;
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+            .quote-submit button { width: 100%; }
+            #quote-status { margin-left: 0 !important; margin-top: 0.5rem; }
 
-            .category-sidebar {
+            /* Contact Form */
+            .contact-form { padding: 1rem; border-radius: 8px; }
+            .contact-form h3 { font-size: 1.3rem; }
+            .form-group { margin-bottom: 1rem; }
+            .form-group label { font-size: 0.9rem; }
+            .form-group input,
+            .form-group textarea,
+            .form-group select { 
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+            .submit-btn { padding: 0.7rem; font-size: 0.9rem; }
+
+            /* Contact Info */
+            .contact-info h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+            .contact-info p { font-size: 0.95rem; }
+            .contact-details { gap: 0.8rem; margin-top: 1rem; }
+            .contact-item { gap: 0.8rem; }
+            .contact-icon { width: 40px; height: 40px; font-size: 1rem; }
+            .contact-item h4 { font-size: 0.95rem; }
+            .contact-item p { font-size: 0.85rem; }
+
+            /* Features */
+            .feature-item { padding: 1rem; border-radius: 8px; }
+            .feature-icon { width: 50px; height: 50px; font-size: 1.2rem; margin-bottom: 0.8rem; }
+            .feature-item h3 { font-size: 1.1rem; }
+            .feature-item p { font-size: 0.85rem; }
+
+            /* Category Sidebar */
+            .category-layout { grid-template-columns: 1fr; gap: 0.8rem; }
+            .category-sidebar { 
                 position: relative;
                 top: 0;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-radius: 8px;
             }
+            .category-sidebar h3 { font-size: 1.1rem; }
+            .category-sidebar li { 
+                padding: 0.6rem 0.8rem;
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+            }
+            .category-sidebar li:hover { padding-left: 1rem; }
+
+            /* Footer */
+            .footer { padding: 2rem 1rem 0.8rem; }
+            .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+            .footer-section h3 { font-size: 1rem; }
+            .footer-section p { font-size: 0.85rem; }
+            .footer-links li { margin-bottom: 0.3rem; }
+            .footer-links a { font-size: 0.85rem; }
+            .footer-bottom { padding-top: 1rem; font-size: 0.8rem; }
+
+            /* Mission & Vision Section */
+            div[style*="grid-template-columns: 1fr 1fr"] { 
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            div[style*="padding: 2rem"] { padding: 1rem !important; }
+
+            /* Lightbox */
+            .lightbox-overlay { padding: 0.8rem; }
+            .lightbox-content { max-height: 85vh; max-width: 95vw; }
+            .lightbox-content img { max-height: 85vh; }
+            .lightbox-controls button { 
+                padding: 0.6rem 0.8rem;
+                margin: 0 0.3rem;
+                font-size: 0.8rem;
+            }
+            .lightbox-close { 
+                padding: 0.5rem 0.7rem;
+                font-size: 0.9rem;
+            }
+
+            /* WhatsApp Button */
+            .whatsapp-float { 
+                width: 50px;
+                height: 50px;
+                right: 15px;
+                bottom: 15px;
+            }
+            .whatsapp-float a { font-size: 20px; }
+        }
+
+        /* Extra small devices: 360px and below */
+        @media (max-width: 360px) {
+            .section { padding: 1.5rem 0.5rem; }
+            .hero h1 { font-size: 1.2rem; }
+            .page-hero h1 { font-size: 1.1rem; }
+            .equipment-card h3 { font-size: 1.1rem; }
+            .section-header h2 { font-size: 1.3rem; }
+            .btn-primary, .btn-secondary { font-size: 0.8rem; padding: 0.6rem 1rem; }
         }
 
         /* ===== Contact Form (improved) ===== */
@@ -850,8 +1073,15 @@
             gap: 1rem;
         }
 
-        .quote-form .form-group { display: flex; flex-direction: column; }
-        .quote-form .form-group.full { grid-column: 1 / -1; }
+        .quote-form .form-group { 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .quote-form .form-group.full { 
+            grid-column: 1 / -1; 
+        }
+        
         .quote-form input,
         .quote-form textarea,
         .quote-form select {
@@ -860,10 +1090,26 @@
             border-radius: 6px;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
+            width: 100%;
         }
 
-        .quote-submit { grid-column: 1 / -1; display: flex; gap: 1rem; align-items: center; }
-        .quote-submit .submit-btn { width: auto; padding: 0.9rem 1.25rem; }
+        .quote-submit { 
+            grid-column: 1 / -1; 
+            display: flex; 
+            gap: 1rem; 
+            align-items: center; 
+            flex-wrap: wrap;
+        }
+        
+        .quote-submit .submit-btn { 
+            width: auto; 
+            padding: 0.9rem 1.25rem; 
+        }
+        
+        .quote-submit button:not(.submit-btn) {
+            flex: 1;
+            min-width: 120px;
+        }
 
         /* ===== Gallery Lightbox ===== */
         .lightbox-overlay {
@@ -886,6 +1132,315 @@
         /* ===== WhatsApp Floating Button ===== */
         .whatsapp-float { position: fixed; right: 20px; bottom: 20px; background: #25D366; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.2); z-index: 10000; }
         .whatsapp-float a { color: white; font-size: 22px; display: block; width: 100%; height: 100%; align-items: center; justify-content: center; display: flex; }
+
+        /* ===== COMPREHENSIVE RESPONSIVE MEDIA QUERIES ===== */
+
+        /* Desktop: 1200px and up */
+        @media (max-width: 1200px) {
+            .container { max-width: 1100px; padding: 0 2rem; }
+            .section { padding: 4rem 2rem; }
+            .section-header h2 { font-size: 2.2rem; }
+            .equipment-grid { gap: 1.5rem; }
+            .features-grid { gap: 1.5rem; }
+            .gallery-grid { gap: 1rem; }
+            .nav-container { padding: 1rem 1.5rem; }
+            .hero h1 { font-size: 3rem; }
+            .page-hero h1 { font-size: 2.5rem; }
+        }
+
+        /* Large Tablet: 992px and up */
+        @media (max-width: 992px) {
+            .container { max-width: 960px; padding: 0 1.5rem; }
+            .section { padding: 3.5rem 1.5rem; }
+            .section-header h2 { font-size: 2rem; }
+            .equipment-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .vehicle-showcase { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 2rem; }
+            .values-list { grid-template-columns: 1fr; }
+            .category-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+            .category-sidebar { position: relative; top: 0; margin-bottom: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .page-hero h1 { font-size: 2rem; }
+            .page-hero { height: 35vh; }
+            .hero { height: 70vh; }
+            .nav-links { gap: 1rem; }
+            .hero-buttons { flex-wrap: wrap; gap: 0.8rem; }
+            .btn-primary, .btn-secondary { padding: 0.9rem 1.8rem; font-size: 0.95rem; }
+            .about-image { height: 400px; }
+            .vehicle-card img { height: 300px; }
+            .gallery-item { height: 250px; }
+            .equipment-card img { height: 200px; }
+        }
+
+        /* Tablet: 768px and up */
+        @media (max-width: 768px) {
+            .container { max-width: 100%; padding: 0 1rem; }
+            .section { padding: 3rem 1rem; }
+            .section-header { margin-bottom: 2.5rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .section-header p { font-size: 1rem; }
+            
+            /* Navigation */
+            .menu-toggle { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin-bottom: 0.5rem; }
+            .nav-container { padding: 0.8rem 1rem; }
+
+            /* Hero */
+            .hero { height: 60vh; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero-content { padding: 1rem; }
+            .hero-buttons { gap: 0.5rem; }
+            .btn-primary, .btn-secondary { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+
+            /* Page Heroes */
+            .page-hero { height: 30vh; }
+            .page-hero h1 { font-size: 1.6rem; }
+
+            /* Grids */
+            .equipment-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .features-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .vehicle-showcase { grid-template-columns: 1fr; gap: 1.5rem; }
+            .about-content { grid-template-columns: 1fr; gap: 1.5rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 2rem; }
+            .values-list { grid-template-columns: 1fr; }
+            
+            /* About Section */
+            .about-image { height: 350px; }
+            .about-text h2 { font-size: 1.8rem; }
+            .about-text p { font-size: 1rem; }
+
+            /* Cards */
+            .equipment-card img { height: 200px; }
+            .vehicle-card img { height: 250px; }
+            .gallery-item { height: 200px; }
+            .feature-item { padding: 1.5rem; }
+            .feature-icon { width: 60px; height: 60px; font-size: 1.5rem; }
+
+            /* Forms */
+            .quote-form { grid-template-columns: 1fr; }
+            .quote-form .form-group.full { grid-column: 1; }
+            .quote-submit { flex-direction: column; }
+            .quote-submit .submit-btn { width: 100%; }
+            .quote-submit button { width: 100%; }
+            .contact-form { padding: 1.5rem; }
+
+            /* Category Sidebar */
+            .category-layout { grid-template-columns: 1fr; gap: 1rem; }
+            .category-sidebar { position: relative; top: 0; margin-bottom: 1.5rem; }
+
+            /* Contact Section */
+            .contact-info h2 { font-size: 1.8rem; }
+            .contact-details { gap: 1rem; }
+            .contact-item { gap: 0.8rem; }
+            .contact-icon { width: 45px; height: 45px; }
+
+            /* Footer */
+            .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-section h3 { font-size: 1.1rem; }
+
+            /* Lightbox responsive */
+            .lightbox-overlay { padding: 1rem; }
+            .lightbox-content { max-height: 80vh; }
+            .lightbox-content img { max-height: 80vh; }
+        }
+
+        /* Mobile: 576px and below */
+        @media (max-width: 576px) {
+            * { box-sizing: border-box; }
+            .container { max-width: 100%; padding: 0 0.8rem; }
+            .section { padding: 2rem 0.8rem; }
+            .section-header { margin-bottom: 2rem; }
+            .section-header h2 { font-size: 1.5rem; }
+            .section-header p { font-size: 0.95rem; }
+
+            /* Navigation */
+            .nav-container { padding: 0.6rem 0.8rem; flex-wrap: wrap; }
+            .logo { font-size: 1.2rem; }
+            .nav-links {
+                padding: 1rem;
+                top: calc(100% + 5px);
+            }
+            .nav-links li a { font-size: 0.95rem; }
+
+            /* Hero */
+            .hero { height: 50vh; padding: 1rem; }
+            .hero h1 { font-size: 1.4rem; letter-spacing: 1px; }
+            .hero p { font-size: 0.9rem; }
+            .hero-content { max-width: 100%; padding: 1rem 0; }
+            .hero-buttons { flex-direction: column; gap: 0.8rem; }
+            .btn-primary, .btn-secondary { 
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+
+            /* Page Heroes */
+            .page-hero { height: 25vh; }
+            .page-hero h1 { font-size: 1.3rem; letter-spacing: 0.5px; }
+
+            /* Grids */
+            .equipment-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .features-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+            .vehicle-showcase { grid-template-columns: 1fr; gap: 1rem; }
+            .about-content { grid-template-columns: 1fr; gap: 1rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 1.5rem; }
+            .values-list { grid-template-columns: 1fr; gap: 0.8rem; }
+
+            /* Cards */
+            .equipment-card { border-radius: 8px; }
+            .equipment-card img { height: 180px; }
+            .equipment-card-content { padding: 1rem; }
+            .equipment-card h3 { font-size: 1.2rem; }
+            .equipment-card p { font-size: 0.9rem; }
+            .card-quote-btn { padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+            .card-specs { margin-top: 0.8rem; padding-top: 0.8rem; }
+            .card-specs li { font-size: 0.85rem; padding: 3px 0; }
+
+            /* Vehicle Cards */
+            .vehicle-card img { height: 220px; }
+            .vehicle-info { padding: 1rem; }
+            .vehicle-info h3 { font-size: 1.3rem; }
+            .vehicle-specs li { flex-direction: column; align-items: flex-start; gap: 0.3rem; font-size: 0.85rem; }
+
+            /* Gallery */
+            .gallery-item { height: 180px; }
+            .gallery-item img { width: 100%; height: 100%; }
+            .gallery-overlay { padding: 1rem 0.8rem 0.8rem; }
+            .gallery-overlay h3 { font-size: 1rem; }
+
+            /* About Section */
+            .about-image { height: 280px; }
+            .about-text h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+            .about-text p { font-size: 0.95rem; line-height: 1.5; }
+            .values-list { grid-template-columns: 1fr; gap: 0.5rem; }
+            .value-item { font-size: 0.9rem; }
+
+            /* Forms */
+            .quote-form { grid-template-columns: 1fr; gap: 0.8rem; }
+            .quote-form .form-group { margin-bottom: 0.8rem; }
+            .quote-form label { font-size: 0.9rem; margin-bottom: 0.3rem; }
+            .quote-form input,
+            .quote-form textarea,
+            .quote-form select { 
+                padding: 0.7rem;
+                font-size: 0.9rem;
+                border-radius: 4px;
+            }
+            .quote-submit { flex-direction: column; gap: 0.8rem; }
+            .quote-submit .submit-btn { 
+                width: 100%;
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+            .quote-submit button { width: 100%; }
+
+            /* Contact Form */
+            .contact-form { padding: 1rem; border-radius: 8px; }
+            .contact-form h3 { font-size: 1.3rem; }
+            .form-group { margin-bottom: 1rem; }
+            .form-group label { font-size: 0.9rem; }
+            .form-group input,
+            .form-group textarea,
+            .form-group select { 
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+            .submit-btn { padding: 0.7rem; font-size: 0.9rem; }
+
+            /* Contact Info */
+            .contact-info h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+            .contact-info p { font-size: 0.95rem; }
+            .contact-details { gap: 0.8rem; margin-top: 1rem; }
+            .contact-item { gap: 0.8rem; }
+            .contact-icon { width: 40px; height: 40px; font-size: 1rem; }
+            .contact-item h4 { font-size: 0.95rem; }
+            .contact-item p { font-size: 0.85rem; }
+
+            /* Features */
+            .feature-item { padding: 1rem; border-radius: 8px; }
+            .feature-icon { width: 50px; height: 50px; font-size: 1.2rem; margin-bottom: 0.8rem; }
+            .feature-item h3 { font-size: 1.1rem; }
+            .feature-item p { font-size: 0.85rem; }
+
+            /* Category Sidebar */
+            .category-layout { grid-template-columns: 1fr; gap: 0.8rem; }
+            .category-sidebar { 
+                position: relative;
+                top: 0;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-radius: 8px;
+            }
+            .category-sidebar h3 { font-size: 1.1rem; }
+            .category-sidebar li { 
+                padding: 0.6rem 0.8rem;
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+            }
+            .category-sidebar li:hover { padding-left: 1rem; }
+
+            /* Footer */
+            .footer { padding: 2rem 1rem 0.8rem; }
+            .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+            .footer-section h3 { font-size: 1rem; }
+            .footer-section p { font-size: 0.85rem; }
+            .footer-links li { margin-bottom: 0.3rem; }
+            .footer-links a { font-size: 0.85rem; }
+            .footer-bottom { padding-top: 1rem; font-size: 0.8rem; }
+
+            /* Lightbox */
+            .lightbox-overlay { padding: 0.8rem; }
+            .lightbox-content { max-height: 85vh; max-width: 95vw; }
+            .lightbox-content img { max-height: 85vh; }
+            .lightbox-controls button { 
+                padding: 0.6rem 0.8rem;
+                margin: 0 0.3rem;
+                font-size: 0.8rem;
+            }
+            .lightbox-close { 
+                padding: 0.5rem 0.7rem;
+                font-size: 0.9rem;
+            }
+
+            /* WhatsApp Button */
+            .whatsapp-float { 
+                width: 50px;
+                height: 50px;
+                right: 15px;
+                bottom: 15px;
+            }
+            .whatsapp-float a { font-size: 20px; }
+        }
+
+        /* Extra small devices: 360px and below */
+        @media (max-width: 360px) {
+            .section { padding: 1.5rem 0.5rem; }
+            .hero h1 { font-size: 1.2rem; }
+            .page-hero h1 { font-size: 1.1rem; }
+            .equipment-card h3 { font-size: 1.1rem; }
+            .section-header h2 { font-size: 1.3rem; }
+            .btn-primary, .btn-secondary { font-size: 0.8rem; padding: 0.6rem 1rem; }
+        }
 
     </style>
 </head>
@@ -961,15 +1516,15 @@
                         </div>
                     </div>
                     <div class="equipment-card" onclick="showPage('bowsers')">
-                        <img src="img/Diesel Bowsers.webp" alt="Fuel Bowsers">
+                        <img src="img/Diesel Bowsers.jpg" alt="Fuel Bowsers">
                         <div class="equipment-card-content">
                             <h3>Fuel Bowsers</h3>
                             <p>Diesel and petrol bowsers for remote site operations</p>
                             <a href="#" class="card-link">Explore →</a>
-                        </div>
+                        </div>  
                     </div>
                     <div class="equipment-card" onclick="showPage('vehicles')">
-                        <img src="img/BMW 650 Convertible.avif" alt="Luxury Vehicles">
+                        <img src="img/BMW 650 Convertible.jpg" alt="Luxury Vehicles">
                         <div class="equipment-card-content">
                             <h3>Luxury Vehicles</h3>
                             <p>BMW Gusheshe and 650 Convertible for special occasions</p>
